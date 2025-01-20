@@ -13,7 +13,7 @@ export const Main = () => {
                     <BlockTextStyle>
                         <SmallText>Hi 👋, </SmallText>
                         <SmallText>My name is</SmallText>
-                        <MainTitle>Pavan MG</MainTitle>
+                        <MainTitle>Pavan MG Петух</MainTitle>
                         <SmallText>I build things for web</SmallText>
                     </BlockTextStyle>
                     <PhotoWrapper>
