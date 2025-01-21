@@ -5,24 +5,24 @@ import {font} from "../../../../styles/Common.tsx";
 
 type workPropsType = {
     position: string;
-    time: string;
+    button: string;
     date: string;
-    place: string;
+    placeOfWork: string;
     location?: string;
 }
 
 export const Work = (props: workPropsType) => {
     return (
         <StyledWork>
-            <TopCardText>
+            <TopCardItem>
                 <TextPosition>{props.position}</TextPosition>
-                <TextButton>{props.time}</TextButton>
-            </TopCardText>
-                <BotCardItems>
-                    <BotCardText>{props.place}</BotCardText>
-                    <BotCardText>{props.location}</BotCardText>
-                    <BotCardText>{props.date}</BotCardText>
-                </BotCardItems>
+                <TextButton>{props.button}</TextButton>
+            </TopCardItem>
+            <BotCardItems>
+                <BotCardText>{props.placeOfWork}</BotCardText>
+                <BotCardText>{props.location}</BotCardText>
+                <BotCardText>{props.date}</BotCardText>
+            </BotCardItems>
             <hr/>
         </StyledWork>
     );
@@ -34,7 +34,7 @@ const StyledWork = styled.div`
     }
 `
 
-const TopCardText = styled.div`
+const TopCardItem = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 15px;
@@ -56,7 +56,7 @@ const TextPosition = styled.p`
 
 `
 const TextButton = styled.p`
-    ${font({weight: 600, Fmax:9, Fmin: 8, color: Theme.colors.fontButton})}
+    ${font({weight: 600, Fmax: 9, Fmin: 8, color: Theme.colors.fontButton})}
     width: 84px;
     height: 24px;
     min-width: 84px;
@@ -72,7 +72,7 @@ const BotCardText = styled.p`
     ${font({color: Theme.colors.fontProjectText, weight: 500, lineHeight: 1.8, Fmax: 12, Fmin: 9})}
     letter-spacing: 1px;
     flex: 1;
-    
+
     &:first-child {
         white-space: nowrap;
     }
@@ -82,7 +82,7 @@ const BotCardText = styled.p`
             text-align: right;
         }
     }
-    
+
     &:last-child {
         display: flex;
         justify-content: flex-end;

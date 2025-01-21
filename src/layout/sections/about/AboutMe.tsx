@@ -6,40 +6,40 @@ import {Theme} from "../../../styles/Theme.tsx";
 import {font} from "../../../styles/Common.tsx";
 
 const positionItem = ['Junior Web Developer', 'Web Development Intern', 'SEO / SEM Specialist']
-const timeItem = ['Full Time', 'Internship', 'Internship']
+const buttonItem = ['Full Time', 'Internship', 'Internship']
 const placeOfWorkItem = ['Dr. Rajkumar’s Learning App', 'IonPixelz Web Solutions', 'HAAPS']
 const dateItem = ['Sep 2021 - Dec 2021', 'Sep 2021 - Dec 2021', 'Sep 2021 - Dec 2021']
 const location = ['Bengaluru', 'Bengaluru', 'Bengaluru']
 const educationItems = ['Bachelor in Electronics & Communication', 'Full Time', 'Bangalore Instutute of Technology', 'Aug 2015 - Dec 2020']
 
 
-export const About = () => {
+export const AboutMe = () => {
     return (
         <StyledAbout>
             <Container>
-                <AboutAllContainer>
-                    <AboutContainer>
-                        <AboutTitle>About Me</AboutTitle>
-                        <AboutText>The Generator App is an online tool that helps you to export ready-made templates
+                <AboutMeAllContainer>
+                    <AboutMeContainer>
+                        <AboutMeTitle>About Me</AboutMeTitle>
+                        <AboutMeText>The Generator App is an online tool that helps you to export ready-made templates
                             ready to work as your future website. It helps you to combine slides, panels and other
-                            components and export it as a set of static files: HTML/CSS/JS.</AboutText>
-                        <AboutTitle>Work Experience</AboutTitle>
+                            components and export it as a set of static files: HTML/CSS/JS.</AboutMeText>
+                        <AboutMeTitle>Work Experience</AboutMeTitle>
                         {positionItem.map((position, index) => (
                             <Work key={index}
                                   location={location[index]}
                                   position={position}
-                                  time={timeItem[index]}
+                                  button={buttonItem[index]}
                                   date={dateItem[index]}
-                                  place={placeOfWorkItem[index]}/>
+                                  placeOfWork={placeOfWorkItem[index]}/>
                         ))}
-                        <AboutTitle>Education</AboutTitle>
+                        <AboutMeTitle>Education</AboutMeTitle>
                         <Work position={educationItems[0]}
-                              time={educationItems[1]}
-                              place={educationItems[2]}
+                              button={educationItems[1]}
+                              placeOfWork={educationItems[2]}
                               date={educationItems[3]}/>
-                    </AboutContainer>
+                    </AboutMeContainer>
                     <Picture src={picture}/>
-                </AboutAllContainer>
+                </AboutMeAllContainer>
             </Container>
         </StyledAbout>
     );
@@ -70,12 +70,12 @@ ${Container} {
     }
 }
 `
-const AboutContainer = styled.div`
+const AboutMeContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 35px;
 `
-const AboutAllContainer = styled.div`
+const AboutMeAllContainer = styled.div`
     display: flex;
     width: 100%;
     max-width: 710px;
@@ -85,9 +85,9 @@ const AboutAllContainer = styled.div`
         max-width: 100vh;
     }
 `
-const AboutTitle = styled.h3`
+const AboutMeTitle = styled.h3`
     ${font({color: Theme.colors.fontTitle, weight: 700, Fmax: 42, Fmin: 36})}
 `
-const AboutText = styled.h3`
+const AboutMeText = styled.h3`
     ${font({color: Theme.colors.fontSubtitle, lineHeight: 1.5, weight: 400, Fmax: 18, Fmin: 14})}
 `
