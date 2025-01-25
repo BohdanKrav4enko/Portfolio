@@ -3,21 +3,23 @@ import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
 import {font} from "../../../styles/Common.tsx";
-// import {StyledButton} from "../../../components/Button.tsx";
+import  Typewriter  from  'typewriter-effect' ;
+
 
 export const Contact = () => {
     return (
         <Container>
-            <StyledContact>
-                {/*<SectionTitle>Contact</SectionTitle>*/}
-                {/*<StyledForm>*/}
-                {/*    <Field placeholder={"Name"}/>*/}
-                {/*    <Field placeholder={"Email"}/>*/}
-                {/*    <Field placeholder={"Message"} as={"textarea"}/>*/}
-                {/*    <StyledButton type={"submit"}>Send Message</StyledButton>*/}
-                {/*</StyledForm>*/}
+            <StyledContact id={'contact'}>
                 <StyledSectionTitle>For any questions please mail me:</StyledSectionTitle>
-                <StyledEmail>hi@pavanmg.in</StyledEmail>
+                <StyledEmail>
+                    <Typewriter
+                    options={{
+                        strings: ['hi@pavanmg.in'],
+                        autoStart: true,
+                        loop: true,
+                    }}
+                />
+                </StyledEmail>
             </StyledContact>
         </Container>
     );
@@ -39,25 +41,13 @@ const StyledContact = styled.section`
         margin: 0;
     }
 `
-// const StyledForm = styled.form`
-//     max-width: 500px;
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 5px;
-//     margin: 0 auto;
-//     margin-bottom: 10vh;
-// `
-// const Field = styled.input`
-//
-// `
 
 const StyledEmail = styled.h2`
     background: ${Theme.colors.accentColor};
     -webkit-background-clip: text;
-    ${font({family: 'DM Sans', weight: 700, Fmax: 58, Fmin: 36, color: 'transparent'})}
+    ${font({family: "DM Sans", weight: 700, Fmax: 58, Fmin: 36, color: 'transparent'})}
 `
 const StyledSectionTitle = styled(SectionTitle)`
     color: ${Theme.colors.fontContact};
-    ${font({family: 'DM Sans', weight: 700, Fmax: 58, Fmin: 36, color: Theme.colors.fontContact})}
+    ${font({family: "DM Sans", weight: 700, Fmax: 58, Fmin: 36, color: Theme.colors.fontContact})}
 `

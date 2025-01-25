@@ -5,15 +5,39 @@ import {Icon} from "../../components/icon/Icon.tsx";
 import {MenuFooter} from "../../components/menu/MenuFooter.tsx";
 import {Container} from "../../components/Container.tsx";
 import {Theme} from "../../styles/Theme.tsx";
+import {animateScroll as scroll} from "react-scroll/modules";
 
-const FooterItems = ["Home", "About", "Technologies", "Projects", "Contact"]
+const footerItems = [
+    {
+        title: 'Home',
+        href: 'main'
+    },
+    {
+        title: 'About Me',
+        href: 'aboutMe'
+    },
+    {
+        title: 'Tech Stack',
+        href: 'skill'
+    },
+    {
+        title: 'Projects',
+        href: 'project'
+    },
+    {
+        title: 'Contact',
+        href: 'contact'
+    }
+]
 
 export const Footer = () => {
     return (
         <StyledFooter>
             <StyledContainer>
                 <TopFooter justify={'space-between'} align={'center'}>
+                    <StyledLogo onClick={() => {scroll.scrollTo(0, 0)}}>
                     <Icon height={'180px'} width={'100px'} viewBox={"0 0 97 59"} iconId={'logoFooter'}/>
+                    </StyledLogo>
                     <FooterContent>
                         <FooterText>+91 12345 09876</FooterText>
                         <FooterText>info@example.com</FooterText>
@@ -38,7 +62,7 @@ export const Footer = () => {
                     </FooterContent>
                 </TopFooter>
                 <BottomFutter justify={'space-between'} align={'center'}>
-                    <MenuFooter menuItems={FooterItems}/>
+                    <MenuFooter menuItems={footerItems}/>
                     <Copyright>Designed and built
                         by <span>Pavan MG with Love & Coffee</span></Copyright>
                 </BottomFutter>
@@ -48,7 +72,6 @@ export const Footer = () => {
 };
 const TopFooter = styled(FlexWrapper)`
     margin-bottom: 60px;
-
     @media ${Theme.media.tablet} {
         flex-direction: column;
         margin-bottom: 0;
@@ -75,6 +98,7 @@ const FooterContent = styled(FlexWrapper)`
 const StyledContainer = styled(Container)`
     position: relative;
 
+
     &::before {
         content: "";
         position: absolute;
@@ -98,6 +122,7 @@ const StyledContainer = styled(Container)`
 `
 
 const StyledFooter = styled.footer`
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 60px 0;
@@ -137,5 +162,13 @@ const BottomFutter = styled(FlexWrapper)`
         flex-direction: column;
         justify-content: center;
         gap: 40px;
+    }
+`
+const StyledLogo = styled.a`
+
+    &:hover{
+        cursor: pointer;
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
     }
 `

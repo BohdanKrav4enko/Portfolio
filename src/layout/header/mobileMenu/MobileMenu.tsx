@@ -1,17 +1,31 @@
 import styled, {css} from "styled-components";
 import {Theme} from "../../../styles/Theme.tsx";
+import {useState} from "react";
+import {Link} from "react-scroll";
 
-export const MobileMenu = (props: { menuItems: Array<string> }) => {
+export const MobileMenu = (props: { menuItems: Array<{title: string, href: string}> }) => {
+
+    const [menuIsOpne, setMenuIsOpen] = useState(false);
+
+    const onBurgerBtnClick = () => {
+        setMenuIsOpen(!menuIsOpne);
+    }
+
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={false}>
+            <BurgerButton isOpen={menuIsOpne} onClick={onBurgerBtnClick}>
                 <span></span>
             </BurgerButton>
-            <MobileMenuWrapper isOpen={false}>
+            <MobileMenuWrapper isOpen={menuIsOpne} onClick={onBurgerBtnClick}>
                 <ul>
                     {props.menuItems.map((item, index) => {
                         return <ListItem key={index}>
-                            <Link href="">{item}</Link>
+                            <LinkNav onClick={onBurgerBtnClick}
+                                     activeClass="active"
+                                     spy={true}
+                                     smooth={true}
+                                     to={item.href}
+                                     offset={-240}>{item.title}</LinkNav>
                         </ListItem>
                     })}
                 </ul>
@@ -32,11 +46,33 @@ const StyledMobileMenu = styled.nav`
 const ListItem = styled.li`
 
 `
-const Link = styled.a`
+const LinkNav = styled(Link)`
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     font-weight: 500;
     text-align: center;
+    display: inline-block;
+    position: relative;
+
+    &:hover, &.active {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+        color: #ece5e5;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 1px;
+            background: #ece5e5;
+            transform: scaleX(1);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+    }
+
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: fixed;
@@ -100,12 +136,14 @@ const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
     right: 0;
     bottom: 0;
     z-index: 100;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 1s ease;
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        transform: translateY(0);
         color: ${Theme.colors.primaryBg};
     `}
     ul {

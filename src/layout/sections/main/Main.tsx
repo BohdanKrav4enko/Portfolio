@@ -4,20 +4,23 @@ import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Container} from "../../../components/Container.tsx";
 import {Theme} from "../../../styles/Theme.tsx";
 import {font} from "../../../styles/Common.tsx";
+import Tilt from 'react-parallax-tilt';
 
 export const Main = () => {
     return (
-        <StyledMain>
+        <StyledMain id={'main'}>
             <Container>
                 <StyledFlexWrapper align="start" justify="space-between" wrap={'wrap'}>
                     <BlockTextStyle>
                         <SmallText>Hi 👋, </SmallText>
                         <SmallText>My name is</SmallText>
-                        <MainTitle>Pavan</MainTitle>
+                        <MainTitle>Pavan MG</MainTitle>
                         <SmallText>I build things for web</SmallText>
                     </BlockTextStyle>
                     <PhotoWrapper>
-                        <Photo src={photo} alt='My photo'/>
+                        <Tilt>
+                            <Photo src={photo} alt='My photo'/>
+                        </Tilt>
                     </PhotoWrapper>
                 </StyledFlexWrapper>
             </Container>
@@ -25,18 +28,28 @@ export const Main = () => {
     );
 };
 
+const BlockTextStyle = styled.div`
+
+    @media ${Theme.media.mobile} {
+        margin-top: 20vh;
+    },
+`
+
 const StyledFlexWrapper = styled(FlexWrapper)`
     @media ${Theme.media.tablet} {
         display: flex;
+        flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: center;
+
     }
     @media ${Theme.media.mobile} {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
+
     }
 `
 
@@ -44,7 +57,7 @@ const Photo = styled.img`
     width: 350px;
     height: 350px;
     object-fit: cover;
-    
+
     @media ${Theme.media.mobile} {
         width: 310px;
         height: 310px;
@@ -66,11 +79,6 @@ const StyledMain = styled.div`
     min-height: 100vh;
 `
 
-const BlockTextStyle = styled.div`
-    @media ${Theme.media.mobile} {
-        margin-top: 20vh;
-    },
-`
 
 const MainTitle = styled.h2`
     background: ${Theme.colors.accentColor};

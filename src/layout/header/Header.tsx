@@ -8,7 +8,28 @@ import {Theme} from "../../styles/Theme.tsx";
 import {MobileMenu} from "./mobileMenu/MobileMenu.tsx";
 
 
-const headerItems = ['Home', 'About', 'Tech Stack', 'Projects', 'Contact']
+const headerItems = [
+    {
+        title: 'Home',
+        href: 'main'
+    },
+    {
+        title: 'About Me',
+        href: 'aboutMe'
+    },
+    {
+        title: 'Tech Stack',
+        href: 'skill'
+    },
+    {
+        title: 'Projects',
+        href: 'project'
+    },
+    {
+        title: 'Contact',
+        href: 'contact'
+    }
+]
 
 
 export const Header = () => {
@@ -47,10 +68,10 @@ const StyledHeader = styled.header`
 const SocialList = styled.nav`
     display: flex;
     gap: 20px;
-    
+
     @media ${Theme.media.tablet} {
         display: none;
-    }  
+    }
     @media ${Theme.media.mobile} {
         display: none;
     }
@@ -59,5 +80,5 @@ const HeaderItems = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 10vh;
-    
+
 `

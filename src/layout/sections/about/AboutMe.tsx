@@ -15,7 +15,7 @@ const educationItems = ['Bachelor in Electronics & Communication', 'Full Time', 
 
 export const AboutMe = () => {
     return (
-        <StyledAbout>
+        <StyledAbout id={'aboutMe'}>
             <Container>
                 <AboutMeAllContainer>
                     <AboutMeContainer>
@@ -79,6 +79,7 @@ const AboutMeAllContainer = styled.div`
     display: flex;
     width: 100%;
     max-width: 710px;
+    max-height: 815px;
     
     
     @media ${Theme.media.tablet} {

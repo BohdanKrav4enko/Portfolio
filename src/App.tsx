@@ -6,6 +6,8 @@ import {Skills} from "./layout/sections/skills/Skills.tsx";
 import {Projects} from "./layout/sections/projects/Projects.tsx";
 import {Contact} from "./layout/sections/contacts/Contacts.tsx";
 import {Footer} from "./layout/footer/Footer.tsx";
+import {GoTopComponent} from "./components/goTopComponent/GoTopComponent.tsx";
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
             <Projects/>
             <Contact/>
             <Footer/>
+            <GoTopComponent/>
         </>
     )
 }

@@ -12,11 +12,10 @@ import projectImage5 from '../../../assets/images/Rectangle 12.svg'
 import projectImage6 from '../../../assets/images/Rectangle 13.svg'
 import {Container} from "../../../components/Container.tsx";
 
-// const projectItems = ['All', 'landing page', 'React', 'spa']
 
 export const Projects = () => {
     return (
-        <StyledProjects>
+        <StyledProjects id={'project'}>
             <Container>
                 <SectionTitle>Projects</SectionTitle>
                 <SectionText>Things I’ve built so far</SectionText>
@@ -53,6 +52,7 @@ export const Projects = () => {
 };
 
 const StyledProjects = styled.section`
+    position: relative;
    ${FlexWrapper} {
        gap: 30px;
    }

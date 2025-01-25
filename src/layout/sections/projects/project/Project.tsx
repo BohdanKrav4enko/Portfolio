@@ -41,7 +41,7 @@ export const Project = (props: ProjectPropsType) => {
     );
 };
 
-const ProjectStyle = styled.div`
+const ProjectStyle = styled.article`
     background-color: ${Theme.colors.primaryBg};
     max-width: 375px;
     min-height: 570px;
