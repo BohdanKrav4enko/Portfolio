@@ -37,11 +37,8 @@ export const Skills = () => {
 const StyledFlexWrapper = styled(FlexWrapper)`
 gap: 100px;
 @media screen and (min-width: 930px) and (max-width: 1129px) {
-    gap: 100
-    px;
-    padding: 0
-    100
-    px;
+    gap: 100px;
+    padding: 0 100px;
 }
 
 `
