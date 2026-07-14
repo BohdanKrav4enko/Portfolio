@@ -1,50 +1,115 @@
-# React + TypeScript + Vite
+# Personal Portfolio 🌐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💫 About The Project
 
-Currently, two official plugins are available:
+**Personal Portfolio** is a simple developer portfolio website created for practice and improving frontend development skills.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project was built to practice creating clean layouts, responsive design, reusable React components, and working with modern frontend tools.
 
-## Expanding the ESLint configuration
+The main focus of the project was improving UI development skills and building a lightweight personal website.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## ✨ Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 👨‍💻 Personal introduction section
+- 🛠️ Technology stack showcase
+- 📂 Project presentation
+- 🔗 External links
+- 📱 Responsive design
+- 🎨 Clean and minimal interface
+- 🧩 Reusable React components
+
+---
+
+## 🛠️ Technologies
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- Styled Components
+
+### Tools
+
+- ESLint
+- Prettier
+- pnpm
+- Vercel
+
+---
+
+## 🚀 Getting Started
+
+### Clone repository
+
+```bash
+git clone https://github.com/BohdanKrav4enko/Portfolio.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+pnpm install
 ```
+
+### Start development server
+
+```bash
+pnpm dev
+```
+
+---
+
+## 📦 Production Build
+
+Create production build:
+
+```bash
+pnpm build
+```
+
+Preview production version:
+
+```bash
+pnpm preview
+```
+
+---
+
+## 🌐 Live Demo
+
+🚀 https://bohdankrav4enko.github.io/Portfolio/
+
+---
+
+## 🎯 Project Goals
+
+This project was created to practice:
+
+- React and TypeScript development
+- Building responsive interfaces
+- Creating reusable components
+- Working with Styled Components
+- Improving frontend development skills
+
+---
+
+## 👨‍💻 Author
+
+**Bohdan Kravchenko**
+
+Frontend Developer specializing in React and TypeScript
+
+GitHub:
+https://github.com/BohdanKrav4enko
+
+Portfolio:
+https://bohdankrav4enko.vercel.app/
+
+---
+
+## 📄 License
+
+This project was created for educational and personal practice purposes.
